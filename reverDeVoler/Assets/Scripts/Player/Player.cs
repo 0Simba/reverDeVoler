@@ -5,8 +5,8 @@ public class Player : MonoBehaviour {
 
     public Transform startPoint;
 
-    private void Start () {
-        Reset();
+    private void Awake () {
+        Game.OnReset += Reset;
     }
 
 
