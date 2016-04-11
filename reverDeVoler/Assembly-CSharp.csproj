@@ -69,6 +69,7 @@
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardAndroidDevice.cs" />
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardiOSDevice.cs" />
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
+     <Compile Include="Assets\Scripts\Fade.cs" />
      <Compile Include="Assets\Scripts\MovementLoop.cs" />
      <Compile Include="Assets\Scripts\Pickable.cs" />
      <Compile Include="Assets\Scripts\Player\Building.cs" />
@@ -172,6 +173,10 @@
  <Reference Include="UnityEditor.iOS.Extensions.Xcode">
  <HintPath>D:/dev/unity/cinq/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
  </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{85296C85-B9C7-38E4-9906-FA9977F73174}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
