@@ -6,23 +6,30 @@ public class Game : MonoBehaviour {
     /*===================================
     =            Static Part            =
     ===================================*/
+    public enum States {
+        game,
+        menu
+    }
 
     public delegate void  ResetMethod ();
     static public   event ResetMethod OnOver;
     static public   event ResetMethod OnStart;
 
-
-
     static public  Transform corner1;
     static public  Transform corner2;
     static private Game      instance;
+    static public  States    state     = States.menu;
+
+
 
     static public void Over () {
+        state = States.menu;
         OnOver();
     }
 
 
     static public void Launch () {
+        state = States.game;
         OnStart();
     }
 

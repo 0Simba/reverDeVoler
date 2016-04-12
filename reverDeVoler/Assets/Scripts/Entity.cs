@@ -14,10 +14,10 @@ public class Entity : MonoBehaviour {
         Game.OnOver += OwnDestroy;
     }
 
-    void Update()
-    {
+    void Update() {
         backCleaner();
     }
+
 
     public void backCleaner()
     {
@@ -32,6 +32,7 @@ public class Entity : MonoBehaviour {
             OwnDestroy();
         }
     }
+
 
     void Start () {
         targetScale = Random.Range(minimumScale, maximumScale);
@@ -58,7 +59,7 @@ public class Entity : MonoBehaviour {
         float elapsedTime = 0;
 
         while (elapsedTime < spawnDuration) {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
 
             float ratio = 1 - Mathf.Min(1, elapsedTime / spawnDuration);
             float scale = targetScale * ratio;

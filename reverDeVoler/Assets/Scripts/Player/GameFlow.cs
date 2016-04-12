@@ -3,7 +3,9 @@ using System.Collections;
 
 public class GameFlow : MonoBehaviour {
 
-    public bool inGame = false;
+    public  float timeoutBeforeNewGame = 1f;
+    private float timeoutElapsedTime   = 0;
+
 
 
     void Awake () {
@@ -13,7 +15,7 @@ public class GameFlow : MonoBehaviour {
 
 
     void Update () {
-        if (inGame) {
+        if (Game.state == Game.States.game) {
             GameUpdate();
         }
         else {
@@ -23,6 +25,21 @@ public class GameFlow : MonoBehaviour {
 
 
     void MenuUpdate () {
+        if (timeoutElapsedTime < timeoutBeforeNewGame) {
+            UpdateTimeoutRatio();
+        }
+        else {
+            CheckLiftHeadRatio();
+        }
+    }
+
+
+    void UpdateTimeoutRatio () {
+        timeoutElapsedTime += Time.unscaledDeltaTime;
+    }
+
+
+    void CheckLiftHeadRatio () {
         Vector3 forward = Player.instance.head.forward;
 
         forward.x = 0;
@@ -33,7 +50,7 @@ public class GameFlow : MonoBehaviour {
 
         if (ratio == 1) {
             Game.Launch();
-        }
+        }        
     }
 
 
@@ -43,13 +60,12 @@ public class GameFlow : MonoBehaviour {
 
 
     void OnOver () {
-        Game.SmoothPause();
-        inGame = false;
+        Game.SmoothPause(0.1f);
+        timeoutElapsedTime = 0;
     }
 
 
     void OnStart () {
-        Game.SmoothUnpause();
-        inGame = true;
+        Game.SmoothUnpause(3f);
     }
 }
