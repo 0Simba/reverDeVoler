@@ -4,15 +4,12 @@ using System.Collections;
 
 public class Fade : MonoBehaviour {
 
-    public  float    fadeDuration; 
-    private RawImage rawImage;
-
+    public  float fadeDuration; 
 
     void Start () {
-        rawImage = GetComponent<RawImage>();
         Game.OnReset += DeathFadeAnimation;
 
-        rawImage.color = new Color (1, 1, 1, 0);
+        GetComponent<Renderer>().material.color = new Color (1, 1, 1, 0);
     }
 
 
@@ -40,7 +37,7 @@ public class Fade : MonoBehaviour {
             elapsedTime += Time.deltaTime;
 
             float ratio = Mathf.Min(1, elapsedTime / fadeDuration);
-            rawImage.color = new Color (1, 1, 1, ratio);
+            GetComponent<Renderer>().material.color = new Color (1, 1, 1, ratio);
 
             yield return null;
         }
@@ -48,17 +45,15 @@ public class Fade : MonoBehaviour {
 
 
     IEnumerator FadeOutCoroutine () {
-        Debug.Log("dans le fade out");
         float elapsedTime = 0;
 
         while (elapsedTime < fadeDuration) {
             elapsedTime += Time.deltaTime;
 
             float ratio = Mathf.Min(1, elapsedTime / fadeDuration);
-            rawImage.color = new Color (1, 1, 1, 1 - ratio);
+            GetComponent<Renderer>().material.color = new Color (1, 1, 1, 1 - ratio);
 
             yield return null;
         }    
     }
-
 }
