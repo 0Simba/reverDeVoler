@@ -8,15 +8,13 @@ public class Player : MonoBehaviour {
 
     public Transform startPoint;
 
-    
+    void Start()
+    {
+        instance = this;
+    }
 
     private void Awake () {
-<<<<<<< HEAD
-        Game.OnReset += Reset;
-        instance = this;
-=======
         Game.OnOver += Reset;
->>>>>>> d89149370404d7b98abe616384f5fde78c237031
     }
 
 
