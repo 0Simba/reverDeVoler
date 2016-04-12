@@ -8,6 +8,7 @@ public class Entity : MonoBehaviour {
     public float spawnDuration;
 
     private float targetScale;
+    private bool  isDestroying = false;
 
     void Awake () {
         Game.OnReset += OwnDestroy;
@@ -24,6 +25,11 @@ public class Entity : MonoBehaviour {
 
 
     public void OwnDestroy () {
+        if (isDestroying) {
+            return;
+        }
+
+        isDestroying = true;
         StartCoroutine(Shrink());
     }
 
