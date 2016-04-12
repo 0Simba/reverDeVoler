@@ -14,6 +14,24 @@ public class Entity : MonoBehaviour {
         Game.OnOver += OwnDestroy;
     }
 
+    void Update()
+    {
+        backCleaner();
+    }
+
+    public void backCleaner()
+    {
+        Vector3 HeadToThis = transform.position - Player.instance.head.position;
+        HeadToThis.Normalize();
+
+        Vector3 lookDirection = Player.instance.head.forward;
+
+        float dotProduct = Vector3.Dot(lookDirection, HeadToThis);
+        if (dotProduct < 0)
+        {
+            OwnDestroy();
+        }
+    }
 
     void Start () {
         targetScale = Random.Range(minimumScale, maximumScale);
