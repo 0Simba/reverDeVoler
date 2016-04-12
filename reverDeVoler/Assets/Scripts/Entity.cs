@@ -11,32 +11,28 @@ public class Entity : MonoBehaviour {
     private bool  isDestroying = false;
 
     void Awake () {
-        Game.OnReset += Reset;
+        Game.OnOver += OwnDestroy;
     }
 
 
     void Start () {
         targetScale = Random.Range(minimumScale, maximumScale);
+
         transform.localScale = new Vector3(0, 0, 0);
+
         StartCoroutine(Grow());
     }
 
 
     public void OwnDestroy () {
-        Game.OnReset -= Reset;
         if (isDestroying) {
             return;
         }
-        Debug.Log(this.name);
+
         isDestroying = true;
         StartCoroutine(Shrink());
     }
 
-    public void Reset()
-    {
-        Game.OnReset -= Reset;
-        Destroy(gameObject);
-    }
 
     IEnumerator Shrink () {
         float elapsedTime = 0;
@@ -53,7 +49,7 @@ public class Entity : MonoBehaviour {
         }
 
         Destroy(gameObject);
-        Game.OnReset -= OwnDestroy;
+        Game.OnOver -= OwnDestroy;
     }
 
 

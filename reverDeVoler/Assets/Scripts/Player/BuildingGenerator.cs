@@ -10,7 +10,7 @@ public class BuildingGenerator : MonoBehaviour {
 
 
     private void Awake () {
-        Game.OnReset += Reset;
+        Game.OnOver += Reset;
     }
 
 

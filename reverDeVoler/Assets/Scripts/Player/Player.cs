@@ -6,7 +6,7 @@ public class Player : MonoBehaviour {
     public Transform startPoint;
 
     private void Awake () {
-        Game.OnReset += Reset;
+        Game.OnOver += Reset;
     }
 
 
