@@ -7,15 +7,30 @@ public class Game : MonoBehaviour {
     =            Static Part            =
     ===================================*/
 
-    public delegate void ResetMethod ();
+    public delegate void  ResetMethod ();
+    static public   event ResetMethod OnReset;
 
-    static public Transform corner1;
-    static public Transform corner2;
 
-    static public event ResetMethod OnReset;
+
+    static public  Transform corner1;
+    static public  Transform corner2;
+    static private Game      instance;
+
+
+
 
     static public void Over () {
         OnReset();
+    }
+
+
+    static public void SmoothPause (float duration = 1f) {
+        instance.SetSmoothPause(duration);
+    }
+
+
+    static public void SmoothUnpause (float duration = 1f) {
+        instance.SetSmoothUnpause(duration);
     }
 
 
@@ -42,5 +57,34 @@ public class Game : MonoBehaviour {
 
     void Start () {
         OnReset();
+        instance = this;
+    }
+
+
+    void SetSmoothPause (float duration) {
+        StartCoroutine(SmoothPauseCoroutine(duration));
+    }
+
+
+    IEnumerator SmoothPauseCoroutine (float duration) {
+        while (Time.timeScale > 0) {
+            yield return null;
+
+            Time.timeScale = Mathf.Max(Time.timeScale - Time.unscaledDeltaTime / duration, 0);
+        }
+    }
+
+
+    void SetSmoothUnpause (float duration) {
+        StartCoroutine(SmoothUnpauseCoroutine(duration));
+    }
+
+
+    IEnumerator SmoothUnpauseCoroutine (float duration) {
+        while (Time.timeScale < 1) {
+            yield return null;
+
+            Time.timeScale = Mathf.Min(Time.timeScale + Time.unscaledDeltaTime / duration, 1);
+        }
     }
 }
