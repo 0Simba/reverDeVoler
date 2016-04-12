@@ -46,6 +46,8 @@ public class Game : MonoBehaviour {
     public Transform instanceCorner2;
 
     void Awake () {
+        instance = this;
+
         if (!instanceCorner1 || !instanceCorner2) {
             Debug.LogError("[Game Week] GameDimension.Start -> Missing corner");
             Destroy(this);
@@ -60,7 +62,6 @@ public class Game : MonoBehaviour {
 
     void Start () {
         OnOver();
-        instance = this;
     }
 
 
