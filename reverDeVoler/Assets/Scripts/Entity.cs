@@ -11,7 +11,7 @@ public class Entity : MonoBehaviour {
     private bool  isDestroying = false;
 
     void Awake () {
-        Game.OnReset += OwnDestroy;
+        Game.OnOver += OwnDestroy;
     }
 
     void Update()
@@ -67,7 +67,7 @@ public class Entity : MonoBehaviour {
         }
 
         Destroy(gameObject);
-        Game.OnReset -= OwnDestroy;
+        Game.OnOver -= OwnDestroy;
     }
 
 

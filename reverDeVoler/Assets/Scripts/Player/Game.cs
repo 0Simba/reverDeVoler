@@ -8,7 +8,8 @@ public class Game : MonoBehaviour {
     ===================================*/
 
     public delegate void  ResetMethod ();
-    static public   event ResetMethod OnReset;
+    static public   event ResetMethod OnOver;
+    static public   event ResetMethod OnStart;
 
 
 
@@ -17,7 +18,12 @@ public class Game : MonoBehaviour {
     static private Game      instance;
 
     static public void Over () {
-        OnReset();
+        OnOver();
+    }
+
+
+    static public void Launch () {
+        OnStart();
     }
 
 
@@ -53,7 +59,7 @@ public class Game : MonoBehaviour {
 
 
     void Start () {
-        OnReset();
+        OnOver();
         instance = this;
     }
 
