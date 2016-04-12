@@ -75,7 +75,9 @@
      <Compile Include="Assets\Scripts\MovementLoop.cs" />
      <Compile Include="Assets\Scripts\Pickable.cs" />
      <Compile Include="Assets\Scripts\Player\BuildingGenerator.cs" />
+     <Compile Include="Assets\Scripts\Player\FakeChild.cs" />
      <Compile Include="Assets\Scripts\Player\Game.cs" />
+     <Compile Include="Assets\Scripts\Player\GameFlow.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCollider.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
