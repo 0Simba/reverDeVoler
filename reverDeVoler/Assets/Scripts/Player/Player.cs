@@ -8,9 +8,7 @@ public class Player : MonoBehaviour {
 
     public Transform startPoint;
 
-    
-
-    private void Awake () {
+     private void Awake () {
         Game.OnOver += Reset;
         instance = this;
     }
