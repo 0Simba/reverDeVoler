@@ -7,7 +7,7 @@ public class Fade : MonoBehaviour {
     public  float fadeDuration; 
 
     void Start () {
-        Game.OnReset += DeathFadeAnimation;
+        Game.OnOver += DeathFadeAnimation;
 
         GetComponent<Renderer>().material.color = new Color (1, 1, 1, 0);
     }
