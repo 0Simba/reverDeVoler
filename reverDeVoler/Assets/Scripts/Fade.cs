@@ -4,27 +4,61 @@ using System.Collections;
 
 public class Fade : MonoBehaviour {
 
-    public RawImage rawImage;
+    public  float    fadeDuration; 
+    private RawImage rawImage;
 
 
     void Start () {
         rawImage = GetComponent<RawImage>();
-        Game.OnReset += FadeIn;
+        Game.OnReset += DeathFadeAnimation;
 
-        rawImage.color = new Color (1, 1, 1, 1);
+        rawImage.color = new Color (1, 1, 1, 0);
+    }
 
+
+    void DeathFadeAnimation () {
+        StartCoroutine(DeathFadeAnimationCoroutine());
+    }
+
+
+    IEnumerator DeathFadeAnimationCoroutine () {
+        StartCoroutine(FadeInCoroutine());
+        yield return new WaitForSeconds(fadeDuration * 2);
+        StartCoroutine(FadeOutCoroutine());
     }
 
 
     void FadeIn () {
-        rawImage.color = new Color (1, 1, 1, 1);
-
-        StartCoroutine(FadeOut());
+        StartCoroutine(FadeOutCoroutine());
     }
 
 
-    IEnumerator FadeOut () {
-        yield return new WaitForSeconds(0.5f);
-        rawImage.color = new Color (1, 1, 1, 0);
+    IEnumerator FadeInCoroutine () {
+        float elapsedTime = 0;
+
+        while (elapsedTime < fadeDuration) {
+            elapsedTime += Time.deltaTime;
+
+            float ratio = Mathf.Min(1, elapsedTime / fadeDuration);
+            rawImage.color = new Color (1, 1, 1, ratio);
+
+            yield return null;
+        }
     }
+
+
+    IEnumerator FadeOutCoroutine () {
+        Debug.Log("dans le fade out");
+        float elapsedTime = 0;
+
+        while (elapsedTime < fadeDuration) {
+            elapsedTime += Time.deltaTime;
+
+            float ratio = Mathf.Min(1, elapsedTime / fadeDuration);
+            rawImage.color = new Color (1, 1, 1, 1 - ratio);
+
+            yield return null;
+        }    
+    }
+
 }
