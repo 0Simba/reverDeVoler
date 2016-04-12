@@ -17,8 +17,8 @@ public class FakeChild : MonoBehaviour {
 
 
     void LateUpdate () {
-        transform.position = parentTransform.position + parentTransform.forward * offset.magnitude;
-        transform.LookAt(parentTransform);
+        transform.position = parentTransform.position;
+        transform.rotation = parentTransform.rotation;
     }
 
 
