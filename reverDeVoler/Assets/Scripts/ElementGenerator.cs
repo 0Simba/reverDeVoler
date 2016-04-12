@@ -11,6 +11,7 @@ public class ElementGenerator : MonoBehaviour {
     public float        maximumTimeBeforSpawn;
     public GameObject[] prefabs;
     public float        apertureAngle           = 45;
+    public int[] prefabScore;
 
     private float elapsedTime;
     private float durationBeforeNextSpawn;
@@ -48,7 +49,30 @@ public class ElementGenerator : MonoBehaviour {
 
 
     private GameObject GetRandomPrefab () {
-        int index = Random.Range(0, prefabs.Length);
+
+        int totalScore=0;
+        int index = 0;
+
+        int[] incrementedScore = new int[prefabScore.Length];
+
+
+        for (int i = 0; i < prefabScore.Length; ++i)
+        {
+            totalScore += prefabScore[i];
+            incrementedScore[i] = totalScore;
+        }
+
+        int randomScore = Random.Range(0, totalScore+1);
+
+        if (randomScore < incrementedScore[0])
+        {
+            index = 0;
+        }
+
+        if (randomScore > incrementedScore[0])
+        {
+            index = 1;
+        }
 
         return prefabs[index];
     }
