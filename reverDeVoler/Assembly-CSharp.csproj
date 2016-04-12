@@ -70,10 +70,10 @@
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardiOSDevice.cs" />
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
      <Compile Include="Assets\Scripts\ElementGenerator.cs" />
+     <Compile Include="Assets\Scripts\Entity.cs" />
      <Compile Include="Assets\Scripts\Fade.cs" />
      <Compile Include="Assets\Scripts\MovementLoop.cs" />
      <Compile Include="Assets\Scripts\Pickable.cs" />
-     <Compile Include="Assets\Scripts\Player\Building.cs" />
      <Compile Include="Assets\Scripts\Player\BuildingGenerator.cs" />
      <Compile Include="Assets\Scripts\Player\Game.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />

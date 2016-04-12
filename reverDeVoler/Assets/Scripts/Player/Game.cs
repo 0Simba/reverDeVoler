@@ -16,9 +16,6 @@ public class Game : MonoBehaviour {
     static public  Transform corner2;
     static private Game      instance;
 
-
-
-
     static public void Over () {
         OnReset();
     }
