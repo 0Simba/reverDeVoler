@@ -20,7 +20,7 @@ public class Fade : MonoBehaviour {
     void Update () {
         float sens = (show) ? 1 : -1;
 
-        ratio += Time.deltaTime / fadeDuration * sens;
+        ratio += Time.unscaledDeltaTime / fadeDuration * sens;
         ratio = Mathf.Min(1, Mathf.Max(0, ratio));
 
         GetComponent<Renderer>().material.color = new Color (1, 1, 1, ratio);

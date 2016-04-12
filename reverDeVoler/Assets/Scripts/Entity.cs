@@ -53,6 +53,8 @@ public class Entity : MonoBehaviour {
 
 
     IEnumerator Shrink () {
+        Game.OnOver -= OwnDestroy;
+
         float elapsedTime = 0;
 
         while (elapsedTime < spawnDuration) {
@@ -67,7 +69,6 @@ public class Entity : MonoBehaviour {
         }
 
         Destroy(gameObject);
-        Game.OnOver -= OwnDestroy;
     }
 
 

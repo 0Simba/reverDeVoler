@@ -17,13 +17,10 @@ public class Pickable : MonoBehaviour {
 
     }
 
-    void Update()
-    {
+    void Update() {
         currentTime += Time.deltaTime; 
-    if (currentTime > despawnTime)
-        {
+        if (currentTime > despawnTime) {
             entityObject.OwnDestroy();
-            Destroy(this);
         }
     }
 }
