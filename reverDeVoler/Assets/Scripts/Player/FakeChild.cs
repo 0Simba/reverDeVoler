@@ -13,6 +13,7 @@ public class FakeChild : MonoBehaviour {
     void Start () {
         float aspectRatio = parentTransform.GetChild(0).GetChild(0).GetComponent<Camera>().aspect;
         transform.localScale = new Vector3(aspectRatio, 1, 1);
+        Debug.Log(aspectRatio);
     }
 
 
