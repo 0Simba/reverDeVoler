@@ -15,6 +15,10 @@ public class Player : MonoBehaviour {
 
     private void Awake () {
         Game.OnOver += Reset;
+<<<<<<< HEAD
+=======
+        instance = this;
+>>>>>>> c464c7dedad4c47f31e81abda2d75e0f92a0b8e5
     }
 
 
