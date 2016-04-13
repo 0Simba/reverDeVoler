@@ -43,7 +43,7 @@ public class ElementGenerator : MonoBehaviour {
         Vector3    spawnPosition = GetRandomSpawnPosition();
         GameObject prefab        = GetRandomPrefab();
 
-        Instantiate(prefab, spawnPosition, Quaternion.identity);
+	   Instantiate(prefab, spawnPosition, Quaternion.identity);
     }
 
 
@@ -86,6 +86,10 @@ public class ElementGenerator : MonoBehaviour {
 
         offsetSpawn = Quaternion.Euler(xRotation, yRotation, 0) * offsetSpawn;
 
-        return offsetSpawn + head.position;
+		Vector3 position = offsetSpawn + head.position;
+		position.y = Mathf.Max(0, position.y);
+		position.y = Mathf.Min (position.y, Game.corner2.position.y);
+
+		return position;
     }
 }

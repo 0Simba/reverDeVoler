@@ -6,6 +6,7 @@ public class Entity : MonoBehaviour {
     public float minimumScale;
     public float maximumScale;
     public float spawnDuration;
+    public float distForDeletion;
 
     private float targetScale;
     private bool  isDestroying = false;
@@ -18,7 +19,6 @@ public class Entity : MonoBehaviour {
         backCleaner();
     }
 
-
     public void backCleaner()
     {
         Vector3 HeadToThis = transform.position - Player.instance.head.position;
@@ -27,7 +27,9 @@ public class Entity : MonoBehaviour {
         Vector3 lookDirection = Player.instance.head.forward;
 
         float dotProduct = Vector3.Dot(lookDirection, HeadToThis);
-        if (dotProduct < 0)
+
+        //Debug.Log(transform.position.magnitude);
+        if (dotProduct < 0 /*&& transform.position.magnitude > distForDeletion*/)
         {
             OwnDestroy();
         }
