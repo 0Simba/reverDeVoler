@@ -1,7 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class Floor : MonoBehaviour {
+public class EntityStatus : MonoBehaviour {
+
+    public Transform startPoint;
+    public Vector3 newDist;
 
     void Start () {
         Game.OnStart += OnStart;
@@ -11,6 +14,7 @@ public class Floor : MonoBehaviour {
 
     void OnStart () {
         gameObject.SetActive(true);
+        transform.position = startPoint.position + newDist;
     }
 
 
