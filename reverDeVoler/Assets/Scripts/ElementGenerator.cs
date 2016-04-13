@@ -50,28 +50,24 @@ public class ElementGenerator : MonoBehaviour {
 
     private GameObject GetRandomPrefab () {
 
-        int totalScore=0;
-        int index = 0;
-
+        int index              = 0;
+        int totalScore         = 0;
         int[] incrementedScore = new int[prefabScore.Length];
 
 
-        for (int i = 0; i < prefabScore.Length; ++i)
-        {
-            totalScore += prefabScore[i];
+        for (int i = 0; i < prefabScore.Length; ++i) {
+            totalScore          += prefabScore[i];
             incrementedScore[i] = totalScore;
         }
 
-        int randomScore = Random.Range(0, totalScore+1);
 
-        if (randomScore < incrementedScore[0])
-        {
-            index = 0;
-        }
+        int randomScore = Random.Range(0, totalScore + 1);
 
-        if (randomScore > incrementedScore[0])
-        {
-            index = 1;
+        for (int i = 0; i < incrementedScore.Length; ++i) {
+            if (randomScore < incrementedScore[i]) {
+                index = i;
+                break;
+            }
         }
 
         return prefabs[index];

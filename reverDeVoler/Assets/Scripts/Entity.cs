@@ -11,16 +11,32 @@ public class Entity : MonoBehaviour {
     private float targetScale;
     private bool  isDestroying = false;
 
+
+
     void Awake () {
         Game.OnOver += OwnDestroy;
     }
+
+
+    void Start () {
+        Init();
+    }
+
+
+    protected void Init () { // Impossible unity error
+        targetScale = Random.Range(minimumScale, maximumScale);
+        transform.localScale = new Vector3(0, 0, 0);
+        StartCoroutine(Grow());
+    }
+
+
 
     void Update() {
         backCleaner();
     }
 
-    public void backCleaner()
-    {
+
+    public void backCleaner() {
         Vector3 HeadToThis = transform.position - Player.instance.head.position;
         HeadToThis.Normalize();
 
@@ -28,21 +44,17 @@ public class Entity : MonoBehaviour {
 
         float dotProduct = Vector3.Dot(lookDirection, HeadToThis);
 
+
+
+
+        return;
         //Debug.Log(transform.position.magnitude);
-        if (dotProduct < 0 /*&& transform.position.magnitude > distForDeletion*/)
-        {
+        if (dotProduct < 0 /*&& transform.position.magnitude > distForDeletion*/) {
             OwnDestroy();
         }
     }
 
 
-    void Start () {
-        targetScale = Random.Range(minimumScale, maximumScale);
-
-        transform.localScale = new Vector3(0, 0, 0);
-
-        StartCoroutine(Grow());
-    }
 
 
     public void OwnDestroy () {
