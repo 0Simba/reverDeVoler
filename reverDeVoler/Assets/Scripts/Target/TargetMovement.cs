@@ -6,14 +6,15 @@ public class TargetMovement : MonoBehaviour {
 
     public List<Vector3> waypoints;
     public Vector3       startOffset;
-    public Transform     startPoint;
     public float         speed        = 1;
     public float         requiredDist = 1;
+    private Transform startPoint;
 
 
 
     void Start () {
         Game.OnStart += OnStart;
+        startPoint = Player.instance.head;
     }
 
 
