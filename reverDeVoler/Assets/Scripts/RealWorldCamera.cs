@@ -47,7 +47,7 @@ public class RealWorldCamera : MonoBehaviour {
 
     void Update () {
         if (Game.state == Game.States.game && playerCeilKiller.warningRatio > 0) {
-            //fade.ForceRatio(playerCeilKiller.warningRatio / 2);
+            fade.ForceRatio(playerCeilKiller.warningRatio / 2);
         }
     }
 }

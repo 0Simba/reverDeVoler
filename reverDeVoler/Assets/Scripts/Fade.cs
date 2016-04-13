@@ -24,9 +24,9 @@ public class Fade : MonoBehaviour {
 
             ratio += Time.unscaledDeltaTime / fadeDuration * sens;
             ratio = Mathf.Min(1, Mathf.Max(0, ratio));
-
-            ratioForced = false;
         }
+
+        ratioForced = false;
 
         GetComponent<Renderer>().material.color = new Color (1, 1, 1, ratio);
     }
