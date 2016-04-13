@@ -1,13 +1,32 @@
 fileFormatVersion: 2
-guid: 84516e6258742db46bfe131ecf2c1dcf
+guid: 95e0066931d588a4bb05c8d78eac0c83
+timeCreated: 1460533233
+licenseType: Free
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: sable bas
+    100004: sable haut
+    100006: sablier corps
+    100008: sablier verre
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Clock
+    400002: sable bas
+    400004: sable haut
+    400006: sablier corps
+    400008: sablier verre
+    2300000: sable bas
+    2300002: sable haut
+    2300004: sablier corps
+    2300006: sablier verre
+    3300000: sable bas
+    3300002: sable haut
+    3300004: sablier corps
+    3300006: sablier verre
+    4300000: sablier corps
+    4300002: sable haut
+    4300004: sable bas
+    4300006: sablier verre
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -16,6 +35,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
@@ -23,16 +43,16 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -49,20 +69,19 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
     hasTranslationDoF: 0
