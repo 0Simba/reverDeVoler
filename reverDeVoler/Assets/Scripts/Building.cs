@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Building : Entity {
+public class Hourglass : Entity {
 
     void Start () {
         base.Init();
