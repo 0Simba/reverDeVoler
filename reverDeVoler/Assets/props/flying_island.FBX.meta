@@ -1,32 +1,15 @@
 fileFormatVersion: 2
-guid: 9c7cac3181ef3cd47ba80d1eac9ee07d
-timeCreated: 1460464902
+guid: 48dccb6005f27b64a9d43c75d6509047
+timeCreated: 1460533233
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: sable bas
-    100002: sable haut
-    100004: //RootNode
-    100006: sablier corps
-    100008: sablier verre
-    400000: sable bas
-    400002: sable haut
-    400004: //RootNode
-    400006: sablier corps
-    400008: sablier verre
-    2300000: sable bas
-    2300002: sable haut
-    2300004: sablier corps
-    2300006: sablier verre
-    3300000: sable bas
-    3300002: sable haut
-    3300004: sablier corps
-    3300006: sablier verre
-    4300000: sablier corps
-    4300002: sable haut
-    4300004: sable bas
-    4300006: sablier verre
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Box001
     9500000: //RootNode
   materials:
     importMaterials: 1
