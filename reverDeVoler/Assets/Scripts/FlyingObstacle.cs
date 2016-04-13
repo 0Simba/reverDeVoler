@@ -8,7 +8,7 @@ public class FlyingObstacle : Entity {
         base.Init();
 
         RandomRotate();
-        gameObject.tag = "Building"; 
+        gameObject.tag = "Building";
     }
 
 
