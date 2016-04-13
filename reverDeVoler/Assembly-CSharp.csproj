@@ -70,11 +70,12 @@
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\CardboardiOSDevice.cs" />
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
      <Compile Include="Assets\Scripts\AndroidSystem.cs" />
+     <Compile Include="Assets\Scripts\Building.cs" />
      <Compile Include="Assets\Scripts\ElementGenerator.cs" />
      <Compile Include="Assets\Scripts\Entity.cs" />
      <Compile Include="Assets\Scripts\EntityStatus.cs" />
      <Compile Include="Assets\Scripts\Fade.cs" />
-     <Compile Include="Assets\Scripts\FloatingTitle.cs" />
+     <Compile Include="Assets\Scripts\FloatingTile.cs" />
      <Compile Include="Assets\Scripts\HUD.cs" />
      <Compile Include="Assets\Scripts\Hourglass.cs" />
      <Compile Include="Assets\Scripts\InGameEnabler.cs" />
