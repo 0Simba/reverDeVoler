@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: df9bc96ed0fd13441bdb1aedd08c29ac
+guid: fa2a982589ddbc94d9c4301beb0cdef0
+timeCreated: 1460543295
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: RockBridge
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Box001
-    9500000: //RootNode
+    400002: RockBridge
+    2300000: RockBridge
+    3300000: RockBridge
+    4300000: RockBridge
   materials:
     importMaterials: 1
     materialName: 0
@@ -33,7 +36,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -67,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
