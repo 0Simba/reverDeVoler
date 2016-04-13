@@ -1,7 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class Hourglass : Entity {
+public class Building : Entity {
+
+    public float zRotationMax = 30;
+
 
     void Start () {
         base.Init();
@@ -28,7 +31,7 @@ public class Hourglass : Entity {
     void RandomRotate () {
         float xRotation = 0;
         float yRotation = Random.Range(-180, 180);
-        float zRotation = Random.Range(-30, 30);
+        float zRotation = Random.Range(-zRotationMax, zRotationMax);
 
         transform.Rotate(xRotation, yRotation, zRotation);
     }
