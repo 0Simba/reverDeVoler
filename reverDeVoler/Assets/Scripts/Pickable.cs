@@ -13,7 +13,8 @@ public class Pickable : MonoBehaviour {
     }
 
     void OnTriggerEnter (Collider other) {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+		entityObject.OwnDestroy();
 
     }
 
