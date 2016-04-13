@@ -8,6 +8,8 @@ public class Hourglass : Entity {
 
         PlaceOnFloor();
         RandomRotate();
+
+        gameObject.tag = "Building"; 
     }
 
 
