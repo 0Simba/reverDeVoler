@@ -1,17 +1,25 @@
 fileFormatVersion: 2
-guid: 04c7bbc14e5c01343b07ef686901c9d3
-timeCreated: 1460550801
+guid: 80f44c403e5fc284c880a24bfd7fceda
+timeCreated: 1460564123
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Baby_Gear
-    100002: //RootNode
-    400000: Baby_Gear
-    400002: //RootNode
-    2300000: Baby_Gear
-    3300000: Baby_Gear
-    4300000: Baby_Gear
+    100000: //RootNode
+    100002: Window_left
+    100004: Window_right
+    400000: //RootNode
+    400002: Window_left
+    400004: Window_right
+    2300000: //RootNode
+    2300002: Window_left
+    2300004: Window_right
+    3300000: //RootNode
+    3300002: Window_left
+    3300004: Window_right
+    4300000: Window_Center
+    4300002: Window_left
+    4300004: Window_right
   materials:
     importMaterials: 1
     materialName: 0
