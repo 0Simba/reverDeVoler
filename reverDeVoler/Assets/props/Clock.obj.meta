@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: 7b39302381213ab4c82654d0a05ed701
+guid: e1cc217f44292cf4993ca77b01e0140b
+timeCreated: 1460550803
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: RockBridge
-    9500000: //RootNode
+    100000: Clock
+    100002: //RootNode
+    400000: Clock
+    400002: //RootNode
+    2300000: Clock
+    3300000: Clock
+    4300000: Clock
   materials:
     importMaterials: 1
     materialName: 0
@@ -33,7 +36,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -67,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
