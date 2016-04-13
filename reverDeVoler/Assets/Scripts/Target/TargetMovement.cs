@@ -5,15 +5,23 @@ using System.Collections.Generic;
 public class TargetMovement : MonoBehaviour {
 
     public List<Vector3> waypoints;
+    public Vector3       startOffset;
+    public Transform     startPoint;
+    public float         speed        = 1;
+    public float         requiredDist = 1;
 
-    public float speed = 1;
-    public float requiredDist = 1;
 
-    // Use this for initialization
+
     void Start () {
-	}
+        Game.OnStart += OnStart;
+    }
+
+
+    void OnStart () {
+        transform.position = startPoint.position + startOffset;
+    }
+
 	
-	// Update is called once per frame
 	void Update () {
         if (waypoints.Count > 0)
         {

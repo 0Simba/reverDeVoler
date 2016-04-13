@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class InGameEnabler : MonoBehaviour {
+public class EntityStatus : MonoBehaviour {
+
+    public Transform startPoint;
 
     void Start () {
         Game.OnStart += OnStart;
