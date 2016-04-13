@@ -10,7 +10,6 @@ public class SandDune : MonoBehaviour {
     void Start() {
         mesh = GetComponent<MeshFilter>().mesh;
         mesh.MarkDynamic();
-        
 	}
 	
 	// Update is called once per frame
