@@ -38,6 +38,8 @@ public class TargetMovement : MonoBehaviour {
         Vector3 nextPoint = waypoints[0];
         Vector3 direction = (nextPoint - transform.position);
 
+        transform.LookAt(nextPoint);
+
         MoveFromDirection(direction.normalized);
 
         if ((nextPoint - transform.position).magnitude < requiredDist) {
@@ -52,8 +54,6 @@ public class TargetMovement : MonoBehaviour {
         float   ratio          = 1 - (playerDistance - playerDistanceMinimum) / minMaxGap;
 
         ratio = Mathf.Min(1, Mathf.Max(0, ratio));
-
-        Debug.Log(ratio);
 
         transform.position += direction * Time.deltaTime * MaxSpeed * ratio;
     }
