@@ -1,33 +1,37 @@
 fileFormatVersion: 2
-guid: 95e0066931d588a4bb05c8d78eac0c83
-timeCreated: 1460533233
+guid: 000a6eb286fff154c979d59c7d666878
+timeCreated: 1460627809
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: sable bas
-    100004: sable haut
-    100006: sablier corps
-    100008: sablier verre
+    100002: sable
+    100004: sable01
+    100006: sable02
+    100008: sable03
+    100010: sable04
     400000: //RootNode
-    400002: sable bas
-    400004: sable haut
-    400006: sablier corps
-    400008: sablier verre
-    2300000: sable bas
-    2300002: sable haut
-    2300004: sablier corps
-    2300006: sablier verre
-    3300000: sable bas
-    3300002: sable haut
-    3300004: sablier corps
-    3300006: sablier verre
-    4300000: sablier corps
-    4300002: sable haut
-    4300004: sable bas
-    4300006: sablier verre
-    9500000: //RootNode
+    400002: sable
+    400004: sable01
+    400006: sable02
+    400008: sable03
+    400010: sable04
+    2300000: sable
+    2300002: sable01
+    2300004: sable02
+    2300006: sable03
+    2300008: sable04
+    3300000: sable
+    3300002: sable01
+    3300004: sable02
+    3300006: sable03
+    3300008: sable04
+    4300000: sable
+    4300002: sable01
+    4300004: sable02
+    4300006: sable03
+    4300008: sable04
   materials:
     importMaterials: 1
     materialName: 0
@@ -86,7 +90,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
