@@ -12,8 +12,10 @@ public class CurveScreen : MonoBehaviour {
         {
             Vector3 p = vertices[i];
             float o = p.x / 5;
+            float d = p.z / 5;
             Debug.Log(o);
             vertices[i].x = Mathf.Sin(o)*10;
+            vertices[i].z = Mathf.Sin(d) * 10;
             vertices[i].y = -Mathf.Cos(o) * 10 + delta;
             Debug.Log(vertices[i]);
         }
