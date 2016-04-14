@@ -3,8 +3,25 @@ using System.Collections;
 
 public class Pickable : MonoBehaviour {
 
-    void OnTriggerEnter (Collider other) {
-        Destroy(gameObject);
+    public float despawnTime;
+    private float currentTime = 0;
+    private Entity entityObject;
 
+    void Start()
+    {
+        entityObject = GetComponent<Entity>();
+    }
+
+    void OnTriggerEnter (Collider other) {
+        //Destroy(gameObject);
+		entityObject.OwnDestroy();
+
+    }
+
+    void Update() {
+        currentTime += Time.deltaTime; 
+        if (currentTime > despawnTime) {
+            entityObject.OwnDestroy();
+        }
     }
 }

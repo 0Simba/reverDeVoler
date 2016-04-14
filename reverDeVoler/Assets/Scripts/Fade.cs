@@ -4,56 +4,36 @@ using System.Collections;
 
 public class Fade : MonoBehaviour {
 
-    public  float fadeDuration; 
+    public  float fadeDuration;
+    public  bool  show        = false;
+
+    private float ratio       = 1;
+    private bool  ratioForced = false; 
+
+
 
     void Start () {
-        Game.OnReset += DeathFadeAnimation;
-
-        GetComponent<Renderer>().material.color = new Color (1, 1, 1, 0);
+        ratio = (show) ? 1 : 0;
+        GetComponent<Renderer>().material.color = new Color (1, 1, 1, ratio);
     }
 
 
-    void DeathFadeAnimation () {
-        StartCoroutine(DeathFadeAnimationCoroutine());
-    }
+    void Update () {
+        if (!ratioForced) {
+            float sens = (show) ? 1 : -1;
 
-
-    IEnumerator DeathFadeAnimationCoroutine () {
-        StartCoroutine(FadeInCoroutine());
-        yield return new WaitForSeconds(fadeDuration * 2);
-        StartCoroutine(FadeOutCoroutine());
-    }
-
-
-    void FadeIn () {
-        StartCoroutine(FadeOutCoroutine());
-    }
-
-
-    IEnumerator FadeInCoroutine () {
-        float elapsedTime = 0;
-
-        while (elapsedTime < fadeDuration) {
-            elapsedTime += Time.deltaTime;
-
-            float ratio = Mathf.Min(1, elapsedTime / fadeDuration);
-            GetComponent<Renderer>().material.color = new Color (1, 1, 1, ratio);
-
-            yield return null;
+            ratio += Time.unscaledDeltaTime / fadeDuration * sens;
+            ratio = Mathf.Min(1, Mathf.Max(0, ratio));
         }
+
+        ratioForced = false;
+
+        GetComponent<Renderer>().material.color = new Color (1, 1, 1, ratio);
     }
 
 
-    IEnumerator FadeOutCoroutine () {
-        float elapsedTime = 0;
-
-        while (elapsedTime < fadeDuration) {
-            elapsedTime += Time.deltaTime;
-
-            float ratio = Mathf.Min(1, elapsedTime / fadeDuration);
-            GetComponent<Renderer>().material.color = new Color (1, 1, 1, 1 - ratio);
-
-            yield return null;
-        }    
+    public void ForceRatio (float hopedRatio) {
+        ratioForced = true;
+        ratio       = hopedRatio;
     }
 }
