@@ -19,8 +19,8 @@ public class TargetMovement : MonoBehaviour {
 
     void Start () {
         Game.OnStart += OnStart;
-        Game.OnOver += Reset;
-        startPoint = Player.instance.head;
+        Game.OnOver  += Reset;
+        startPoint   = Player.instance.head;
 
         minMaxGap  = playerDistanceMaximum - playerDistanceMinimum;
     }
@@ -77,7 +77,6 @@ public class TargetMovement : MonoBehaviour {
 
 
     void AddBonus () {
-        Debug.Log("Add");
         Instantiate(bonus, transform.position, Quaternion.identity);
     }
 }

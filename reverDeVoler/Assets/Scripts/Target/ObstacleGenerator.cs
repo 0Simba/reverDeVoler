@@ -13,6 +13,7 @@ public class ObstacleGenerator : MonoBehaviour {
 
     private float  elapsedTime;
     private float  spawnDuration;
+    private bool   spawnEnable = true;
 
 
     void Start () {
@@ -27,6 +28,11 @@ public class ObstacleGenerator : MonoBehaviour {
 
 
     void Update () {
+        if (!spawnEnable) {
+            return;
+        }
+
+
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime > spawnDuration) {
@@ -74,5 +80,17 @@ public class ObstacleGenerator : MonoBehaviour {
         }
 
         return obstacles[index];
+    }
+
+
+    void OnTriggerEnter (Collider other) {
+        if (other.tag == "ObstacleEnabler") {
+            spawnEnable = true;
+            Debug.Log("true");
+        }
+        else if (other.tag == "ObstacleDisabler") {
+            spawnEnable = false;
+            Debug.Log("false");
+        }
     }
 }
