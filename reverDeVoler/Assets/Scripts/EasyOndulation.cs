@@ -16,7 +16,6 @@ public class EasyOndulation : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Time.time);
         transform.localPosition = origin + Mathf.Cos(Time.realtimeSinceStartup * speed) * scale * dir;	    
 	}
 }
