@@ -15,14 +15,6 @@ public class SandDune : MonoBehaviour {
 	}
 
 
-    void OnStart () {
-    }
-
-
-    void OnOver () {
-    }
-
-
     void GenerateMesh()
     {
         transform.position = new Vector3(Mathf.Floor(player.position.x), 0, Mathf.Floor(player.position.z));
@@ -35,13 +27,13 @@ public class SandDune : MonoBehaviour {
         mesh.RecalculateNormals();
     }
 	
-	// Update is called once per frame
+
 	void Update () {
         GenerateMesh();
     }
 
-    public float GetFloorLevel(Vector3 p)
-    {
+
+    public float GetFloorLevel(Vector3 p) {
         return (Mathf.Sin(p.x * 0.5f + p.z * 0.1f) * (1 + Mathf.PerlinNoise(p.x*0.5f, p.z * 0.5f) * 1f) + Mathf.Sin(p.x*0.02f + p.z*0.5f) * 0.5f) * 0.5f;
     }
 }
