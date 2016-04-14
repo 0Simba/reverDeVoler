@@ -3,10 +3,14 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+    static public Player instance;
+
+    public Transform head;
     public Transform startPoint;
 
-    private void Awake () {
-        Game.OnReset += Reset;
+     private void Awake () {
+        instance = this;
+        Game.OnOver += Reset;
     }
 
 

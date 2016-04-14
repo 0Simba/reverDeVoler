@@ -6,22 +6,55 @@ public class Entity : MonoBehaviour {
     public float minimumScale;
     public float maximumScale;
     public float spawnDuration;
+    public float distForDeletion;
 
     private float targetScale;
     private bool  isDestroying = false;
 
+
+
     void Awake () {
-        Game.OnReset += OwnDestroy;
+        Game.OnOver += OwnDestroy;
     }
 
 
     void Start () {
+        Init();
+    }
+
+
+    protected void Init () { // Impossible unity error
         targetScale = Random.Range(minimumScale, maximumScale);
-
         transform.localScale = new Vector3(0, 0, 0);
-
         StartCoroutine(Grow());
     }
+
+
+
+    void Update() {
+        backCleaner();
+    }
+
+
+    public void backCleaner() {
+        Vector3 HeadToThis = transform.position - Player.instance.head.position;
+        HeadToThis.Normalize();
+
+        Vector3 lookDirection = Player.instance.head.forward;
+
+        float dotProduct = Vector3.Dot(lookDirection, HeadToThis);
+
+
+
+
+        return;
+        //Debug.Log(transform.position.magnitude);
+        if (dotProduct < 0 /*&& transform.position.magnitude > distForDeletion*/) {
+            OwnDestroy();
+        }
+    }
+
+
 
 
     public void OwnDestroy () {
@@ -35,10 +68,12 @@ public class Entity : MonoBehaviour {
 
 
     IEnumerator Shrink () {
+        Game.OnOver -= OwnDestroy;
+
         float elapsedTime = 0;
 
         while (elapsedTime < spawnDuration) {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
 
             float ratio = 1 - Mathf.Min(1, elapsedTime / spawnDuration);
             float scale = targetScale * ratio;
@@ -49,7 +84,6 @@ public class Entity : MonoBehaviour {
         }
 
         Destroy(gameObject);
-        Game.OnReset -= OwnDestroy;
     }
 
 
