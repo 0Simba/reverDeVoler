@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.Collections;
 
 public class SandDune : MonoBehaviour {
@@ -35,6 +35,6 @@ public class SandDune : MonoBehaviour {
 
     public float GetFloorLevel(Vector3 p)
     {
-        return Mathf.Sin(p.x * 0.5f + p.z * 0.1f) * (1 + Mathf.PerlinNoise(p.x*0.5f, p.z * 0.5f) * 1f) + Mathf.Sin(p.x*0.02f + p.z*0.5f) * 0.5f;
+        return (Mathf.Sin(p.x * 0.5f + p.z * 0.1f) * (1 + Mathf.PerlinNoise(p.x*0.5f, p.z * 0.5f) * 1f) + Mathf.Sin(p.x*0.02f + p.z*0.5f) * 0.5f) * 0.5f;
     }
 }
