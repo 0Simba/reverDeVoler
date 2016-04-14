@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerCollider : PlayerParent {
+public class PlayerCollider : MonoBehaviour {
 
     public LayerMask destroyableLayers;
 
