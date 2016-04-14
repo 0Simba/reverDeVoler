@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: e1cc217f44292cf4993ca77b01e0140b
-timeCreated: 1460620645
+guid: c1d6977e3de1c934ea5c956c95560b95
+timeCreated: 1460550297
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Clock
+    100000: Pillow
     100002: //RootNode
-    400000: Clock
+    400000: Pillow
     400002: //RootNode
-    2300000: Clock
-    3300000: Clock
-    4300000: Clock
+    2300000: Pillow
+    3300000: Pillow
+    4300000: Pillow
   materials:
     importMaterials: 1
     materialName: 0
@@ -54,7 +54,7 @@ ModelImporter:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 1
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
