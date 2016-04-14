@@ -76,8 +76,8 @@
      <Compile Include="Assets\Scripts\EntityStatus.cs" />
      <Compile Include="Assets\Scripts\Fade.cs" />
      <Compile Include="Assets\Scripts\FloatingTile.cs" />
+     <Compile Include="Assets\Scripts\FlyingObstacle.cs" />
      <Compile Include="Assets\Scripts\HUD.cs" />
-     <Compile Include="Assets\Scripts\Hourglass.cs" />
      <Compile Include="Assets\Scripts\InGameEnabler.cs" />
      <Compile Include="Assets\Scripts\MovementLoop.cs" />
      <Compile Include="Assets\Scripts\Pickable.cs" />
@@ -92,8 +92,11 @@
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerParent.cs" />
      <Compile Include="Assets\Scripts\RealWorldCamera.cs" />
+     <Compile Include="Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\Sounds.cs" />
      <Compile Include="Assets\Scripts\Target\TargetMovement.cs" />
+     <Compile Include="Assets\Scripts\World\NewWorldGen.cs" />
+     <Compile Include="Assets\Scripts\World\SandDune.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
