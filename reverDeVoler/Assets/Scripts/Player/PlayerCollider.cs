@@ -32,6 +32,7 @@ public class PlayerCollider : MonoBehaviour {
                 }
 
                 targetEntity.OwnDestroy();
+            }
         }
     }
 }
