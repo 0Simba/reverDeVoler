@@ -8,7 +8,7 @@ public class TargetMovement : MonoBehaviour {
     public Vector3       startOffset;
     public float         speed        = 1;
     public float         requiredDist = 1;
-    private Transform startPoint;
+    private Transform    startPoint;
 
 
 
