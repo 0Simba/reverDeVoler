@@ -78,6 +78,7 @@
      <Compile Include="Assets\Scripts\FloatingTile.cs" />
      <Compile Include="Assets\Scripts\FlyingObstacle.cs" />
      <Compile Include="Assets\Scripts\HUD.cs" />
+     <Compile Include="Assets\Scripts\HUDHider.cs" />
      <Compile Include="Assets\Scripts\InGameEnabler.cs" />
      <Compile Include="Assets\Scripts\MovementLoop.cs" />
      <Compile Include="Assets\Scripts\Pickable.cs" />
