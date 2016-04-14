@@ -21,7 +21,6 @@ public class NewWorldGen : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(spawnObject.Count);
         while (spawnObject.Count < 4)
         {
             GameObject obj = Instantiate(GetRandomObject(), nextObjectPos, Quaternion.LookRotation(nextObjectPos - oldObjectPos)) as GameObject;
