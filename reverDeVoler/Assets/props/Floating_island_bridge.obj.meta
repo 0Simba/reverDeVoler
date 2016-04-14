@@ -1,14 +1,22 @@
 fileFormatVersion: 2
-guid: d8a020307d5d57046be008142e4703b5
+guid: d57cfbb98980c59439b8e2bea5900b55
+timeCreated: 1460619885
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
+    100002: flotting_island_bridge
+    100004: flotting_island_bridge001
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Rock
-    9500000: //RootNode
+    400002: flotting_island_bridge
+    400004: flotting_island_bridge001
+    2300000: flotting_island_bridge
+    2300002: flotting_island_bridge001
+    3300000: flotting_island_bridge
+    3300002: flotting_island_bridge001
+    4300000: flotting_island_bridge
+    4300002: flotting_island_bridge001
   materials:
     importMaterials: 1
     materialName: 0
@@ -33,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -67,7 +75,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
