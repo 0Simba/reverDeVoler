@@ -96,6 +96,7 @@
      <Compile Include="Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\Sounds.cs" />
      <Compile Include="Assets\Scripts\Target\ObstacleGenerator.cs" />
+     <Compile Include="Assets\Scripts\Target\PropsGenerator.cs" />
      <Compile Include="Assets\Scripts\Target\TargetMovement.cs" />
      <Compile Include="Assets\Scripts\World\NewWorldGen.cs" />
      <Compile Include="Assets\Scripts\World\SandDune.cs" />

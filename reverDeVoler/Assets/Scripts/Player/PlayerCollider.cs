@@ -27,7 +27,7 @@ public class PlayerCollider : PlayerParent {
                 Entity targetEntity = colliders[i].gameObject.GetComponent<Entity>();
 
                 if (!targetEntity) {
-                    Debug.LogError("[Game Week] PlayerCollider.DestroySomeBuildings -> Missing entity component");
+                   //makes game laggy! Debug.LogError("[Game Week] PlayerCollider.DestroySomeBuildings -> Missing entity component");
                     continue;
                 }
 
