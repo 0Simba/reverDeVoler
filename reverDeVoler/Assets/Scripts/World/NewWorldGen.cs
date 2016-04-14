@@ -12,10 +12,24 @@ public class NewWorldGen : MonoBehaviour {
     private Vector3 oldObjectPos = Vector3.zero;
     public float angleRot = 90;
     public float finalObjectWaypointCount = 0;
+
+    void Reset()
+    {
+        foreach (GameObject spawn in spawnObject.ToArray())
+        {
+            Destroy(spawn);
+            spawnObject.Remove(spawn);
+        }
+        nextObjectPos = Vector3.forward * distanceBetweenObstacle;
+        oldObjectPos = Vector3.zero;
+        
+    }
     
 	// Use this for initialization
 	void Start () {
         nextObjectPos = Vector3.forward * distanceBetweenObstacle;
+        oldObjectPos = Vector3.zero;
+        Game.OnOver += Reset;
     }
 
     // Update is called once per frame
@@ -34,11 +48,13 @@ public class NewWorldGen : MonoBehaviour {
     void UpdateTargetPath(GameObject obj)
     {
         finalObjectWaypointCount = 0;
+        
         List<Transform> targets = GetChildWithTag(obj.transform, "Target");
         foreach(Transform point in targets)
         {
             finalObjectWaypointCount++;
-            target.waypoints.Add(point.position);
+            Vector3 pointV3 = point.position;
+            target.waypoints.Add(pointV3);
             Destroy(point.gameObject);
         }
     }

@@ -10,13 +10,11 @@ public class HUD : MonoBehaviour {
 
 
     void OnStart () {
-        Debug.Log("hide");
         GetComponent<Renderer>().material.color = new Color (1, 1, 1, 0);
     }
 
 
     void OnOver () {
-        Debug.Log("show");
         GetComponent<Renderer>().material.color = new Color (1, 1, 1, 1);
     }
 
