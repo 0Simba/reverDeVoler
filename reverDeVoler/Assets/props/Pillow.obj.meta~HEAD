@@ -1,16 +1,17 @@
 fileFormatVersion: 2
-guid: 3f12adf99e994e9499975f82d2e34750
+guid: c1d6977e3de1c934ea5c956c95560b95
+timeCreated: 1460550297
+licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Gear
+    100000: Pillow
     100002: //RootNode
-    400000: Gear
+    400000: Pillow
     400002: //RootNode
-    2300000: Gear
-    3300000: Gear
-    4300000: Gear
-    9500000: //RootNode
+    2300000: Pillow
+    3300000: Pillow
+    4300000: Pillow
   materials:
     importMaterials: 1
     materialName: 0
@@ -34,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -69,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
