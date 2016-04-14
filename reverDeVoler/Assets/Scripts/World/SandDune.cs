@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 public class SandDune : MonoBehaviour {
@@ -9,19 +10,27 @@ public class SandDune : MonoBehaviour {
     // Use this for initialization
     void Start() {
         mesh = GetComponent<MeshFilter>().mesh;
+        GenerateMesh();
+        //AssetDatabase.CreateAsset(mesh, "Assets/test.asset");
+        //AssetDatabase.SaveAssets();
         mesh.MarkDynamic();
 	}
+
+    void GenerateMesh()
+    {
+    transform.position = new Vector3(Mathf.Floor(player.position.x), 0, Mathf.Floor(player.position.z));
+    Vector3[] vertices = mesh.vertices;
+    for (int i = 0; i < vertices.Length; i++)
+    {
+        vertices[i].y = GetFloorLevel(transform.TransformPoint(vertices[i]));
+    }
+    mesh.vertices = (vertices);
+    mesh.RecalculateNormals();
+}
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = new Vector3(Mathf.Floor(player.position.x), 0, Mathf.Floor(player.position.z));
-        Vector3[] vertices = mesh.vertices;
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            vertices[i].y = GetFloorLevel(transform.TransformPoint(vertices[i]));
-        }
-        mesh.vertices = (vertices);
-        mesh.RecalculateNormals();
+        GenerateMesh();
     }
 
     public float GetFloorLevel(Vector3 p)
