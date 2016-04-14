@@ -71,6 +71,7 @@
      <Compile Include="Assets\Cardboard\Scripts\VRDevices\UnityEditorDevice.cs" />
      <Compile Include="Assets\Scripts\AndroidSystem.cs" />
      <Compile Include="Assets\Scripts\Building.cs" />
+     <Compile Include="Assets\Scripts\DestroyOnOver.cs" />
      <Compile Include="Assets\Scripts\ElementGenerator.cs" />
      <Compile Include="Assets\Scripts\Entity.cs" />
      <Compile Include="Assets\Scripts\EntityStatus.cs" />
