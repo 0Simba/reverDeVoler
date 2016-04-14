@@ -12,6 +12,4 @@ public class DestroyOnOver : MonoBehaviour {
         Game.OnOver -= OnOver;
         Destroy(gameObject);
     }
-
-
 }
