@@ -10,6 +10,7 @@ public class TargetMovement : MonoBehaviour {
     public  float         requiredDist = 1;
     public  float         playerDistanceMinimum;
     public  float         playerDistanceMaximum;
+    public  GameObject    bonus;
 
     private Transform     startPoint;
     private Transform     player;
@@ -45,6 +46,7 @@ public class TargetMovement : MonoBehaviour {
 
         if ((nextPoint - transform.position).magnitude < requiredDist) {
             SetNextWayPoint();
+            AddBonus();
         }
 	}
 
@@ -68,8 +70,14 @@ public class TargetMovement : MonoBehaviour {
         }        
     }
 
-    void Reset()
-    {
+
+    void Reset() {
         waypoints.Clear();
+    }
+
+
+    void AddBonus () {
+        Debug.Log("Add");
+        Instantiate(bonus, transform.position, Quaternion.identity);
     }
 }

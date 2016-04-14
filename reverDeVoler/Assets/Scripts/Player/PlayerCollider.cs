@@ -17,4 +17,21 @@ public class PlayerCollider : MonoBehaviour {
             Player.instance.BonusPicked();
         }
     }
+
+
+    void DestroySomeBuildings () {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, destroyRadius, destroyableLayers);
+
+        for (int i = 0; i < colliders.Length; ++i) {
+            if (Random.Range(0f, 1f) <= chanceToDestroy) {
+                Entity targetEntity = colliders[i].gameObject.GetComponent<Entity>();
+
+                if (!targetEntity) {
+                   //makes game laggy! Debug.LogError("[Game Week] PlayerCollider.DestroySomeBuildings -> Missing entity component");
+                    continue;
+                }
+
+                targetEntity.OwnDestroy();
+        }
+    }
 }
