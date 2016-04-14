@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FlyingObstacle : Entity {
 
+    public float randomSpawnRotation = 0;
+
 
     void Start () {
         base.Init();
@@ -15,7 +17,7 @@ public class FlyingObstacle : Entity {
 
     void RandomRotate () {
         float xRotation = 0;
-        float yRotation = Random.Range(-180, 180);
+        float yRotation = Random.Range(-randomSpawnRotation, randomSpawnRotation);
         float zRotation = 0;
 
         transform.Rotate(xRotation, yRotation, zRotation);
