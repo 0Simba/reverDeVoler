@@ -22,7 +22,6 @@ public class FloatingTile : MonoBehaviour
 
     void OnOver()
     {
-        Debug.Log("show");
         changeTitle();
     }
 

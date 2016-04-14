@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerCollider : PlayerParent {
+public class PlayerCollider : MonoBehaviour {
 
     public LayerMask destroyableLayers;
 
@@ -14,7 +14,7 @@ public class PlayerCollider : PlayerParent {
             Game.Over();
         }
         else {
-            DestroySomeBuildings();
+            Player.instance.BonusPicked();
         }
     }
 
@@ -32,7 +32,6 @@ public class PlayerCollider : PlayerParent {
                 }
 
                 targetEntity.OwnDestroy();
-            }
         }
     }
 }
