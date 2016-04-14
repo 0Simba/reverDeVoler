@@ -31,8 +31,6 @@ public class TargetMovement : MonoBehaviour {
 
     void OnStart () {
         transform.position = Player.instance.startPoint.position + startOffset;
-
-        Debug.Log(transform.position);
     }
 
 	
