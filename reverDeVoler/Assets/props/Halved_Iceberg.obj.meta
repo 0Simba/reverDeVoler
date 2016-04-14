@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: b7b5fead52cd84747b5525cbf1797423
-timeCreated: 1460548853
+guid: f1f513658c4221841b37ad9bd6ca3749
+timeCreated: 1460633828
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Clock
+    100000: Halved_Iceberg
     100002: //RootNode
-    400000: Clock
+    400000: Halved_Iceberg
     400002: //RootNode
-    2300000: Clock
-    3300000: Clock
-    4300000: Clock
+    2300000: Halved_Iceberg
+    3300000: Halved_Iceberg
+    4300000: Halved_Iceberg
   materials:
     importMaterials: 1
     materialName: 0

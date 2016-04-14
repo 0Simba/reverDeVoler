@@ -1,26 +1,2 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-m_EditorVersion: 5.3.4f1
-=======
-m_EditorVersion: 5.2.1f1
->>>>>>> d89149370404d7b98abe616384f5fde78c237031
-=======
-m_EditorVersion: 5.3.1f1
->>>>>>> origin/graphic
-=======
 m_EditorVersion: 5.3.2f1
->>>>>>> origin/graphic
-=======
-m_EditorVersion: 5.3.1f1
->>>>>>> origin/graphic
-=======
-m_EditorVersion: 5.3.2f1
->>>>>>> origin/graphic
-=======
-m_EditorVersion: 5.3.1f1
->>>>>>> origin/graphic
 m_StandardAssetsVersion: 0

@@ -1,17 +1,17 @@
 fileFormatVersion: 2
-guid: b7b5fead52cd84747b5525cbf1797423
-timeCreated: 1460548853
+guid: dc2a8eb1954de4841bf7dc3d03a3cb19
+timeCreated: 1460633827
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Clock
-    100002: //RootNode
-    400000: Clock
-    400002: //RootNode
-    2300000: Clock
-    3300000: Clock
-    4300000: Clock
+    100000: //RootNode
+    100002: Iceberg_
+    400000: //RootNode
+    400002: Iceberg_
+    2300000: Iceberg_
+    3300000: Iceberg_
+    4300000: Iceberg_
   materials:
     importMaterials: 1
     materialName: 0
