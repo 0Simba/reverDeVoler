@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: d8a020307d5d57046be008142e4703b5
+guid: c4d131f795b61534fb83ec773d094a2d
+timeCreated: 1460548853
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Rock
-    9500000: //RootNode
+    100000: Baby_Gear
+    100002: //RootNode
+    400000: Baby_Gear
+    400002: //RootNode
+    2300000: Baby_Gear
+    3300000: Baby_Gear
+    4300000: Baby_Gear
   materials:
     importMaterials: 1
     materialName: 0
@@ -33,7 +36,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -67,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

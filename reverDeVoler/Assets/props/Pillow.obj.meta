@@ -1,14 +1,17 @@
 fileFormatVersion: 2
-guid: be0141103dcbce64faf7b270036abf06
+guid: 5b745ebed02edb54682049cf68f67871
+timeCreated: 1460548852
+licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Crystal
-    9500000: //RootNode
+    100000: Pillow
+    100002: //RootNode
+    400000: Pillow
+    400002: //RootNode
+    2300000: Pillow
+    3300000: Pillow
+    4300000: Pillow
   materials:
     importMaterials: 1
     materialName: 0
@@ -33,7 +36,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -67,7 +70,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
