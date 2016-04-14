@@ -35,6 +35,7 @@ public class Player : MonoBehaviour {
 
     public void BonusPicked () {
         currentLifeTime = lifeTime;
+        Game.CallOnBonusPicked();
     }
 
 

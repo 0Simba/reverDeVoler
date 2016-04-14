@@ -14,6 +14,7 @@ public class Game : MonoBehaviour {
     public delegate void  ResetMethod ();
     static public   event ResetMethod OnOver;
     static public   event ResetMethod OnStart;
+    static public   event ResetMethod OnBonusPicked;
 
     static public  Transform corner1;
     static public  Transform corner2;
@@ -43,6 +44,10 @@ public class Game : MonoBehaviour {
         instance.SetSmoothUnpause(duration);
     }
 
+
+    static public void CallOnBonusPicked () {
+        OnBonusPicked();
+    }
 
 
     /*====================================
