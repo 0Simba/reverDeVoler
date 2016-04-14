@@ -18,10 +18,14 @@ public class SandDune : MonoBehaviour {
         Vector3[] vertices = mesh.vertices;
         for (int i = 0; i < vertices.Length; i++)
         {
-            var p = transform.TransformPoint(vertices[i]);
-            vertices[i].y = Mathf.Sin(p.x * 0.5f + p.z * 0.1f) * (1 + Mathf.PerlinNoise(p.x, p.z)) * 0.5f;
+            vertices[i].y = GetFloorLevel(transform.TransformPoint(vertices[i]));
         }
         mesh.vertices = (vertices);
         mesh.RecalculateNormals();
+    }
+
+    public float GetFloorLevel(Vector3 p)
+    {
+        return Mathf.Sin(p.x * 0.5f + p.z * 0.1f) * (1 + Mathf.PerlinNoise(p.x, p.z)) * 0.5f;
     }
 }
