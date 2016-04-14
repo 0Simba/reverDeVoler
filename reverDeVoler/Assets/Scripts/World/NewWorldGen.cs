@@ -10,6 +10,7 @@ public class NewWorldGen : MonoBehaviour {
     public float distanceBetweenObstacle;
     private Vector3 nextObjectPos = Vector3.forward;
     private Vector3 oldObjectPos = Vector3.zero;
+    public float angleRot = 90;
     
 	// Use this for initialization
 	void Start () {
@@ -22,7 +23,7 @@ public class NewWorldGen : MonoBehaviour {
         Debug.Log(spawnObject.Count);
         if (spawnObject.Count < 10)
         {
-            GameObject obj = Instantiate(GetRandomObject(), nextObjectPos, Quaternion.Euler(0, Random.value * 180 - 90, 0)) as GameObject;
+            GameObject obj = Instantiate(GetRandomObject(), nextObjectPos, Quaternion.LookRotation(nextObjectPos - oldObjectPos)) as GameObject;
             CalculateNextPos();
             UpdateTargetPath(obj);
             spawnObject.Add(obj);
@@ -41,7 +42,7 @@ public class NewWorldGen : MonoBehaviour {
     void CalculateNextPos()
     {
         Vector3 forward = (nextObjectPos - oldObjectPos).normalized;
-        Quaternion spe = Quaternion.Euler(0, Random.value * 180 - 90, 0);
+        Quaternion spe = Quaternion.Euler(0, Random.value * angleRot - angleRot * 0.5f, 0);
         Vector3 newForward = spe * forward;
         Debug.Log(spe);
         oldObjectPos = nextObjectPos;
