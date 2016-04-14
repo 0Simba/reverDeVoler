@@ -13,8 +13,11 @@ public class Pickable : MonoBehaviour {
     }
 
     void OnTriggerEnter (Collider other) {
-        //Destroy(gameObject);
-		entityObject.OwnDestroy();
+        if (other.tag == "ObstacleEnabler")
+        {
+            return;
+        }
+        entityObject.OwnDestroy();
 
     }
 

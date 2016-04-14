@@ -1,42 +1,49 @@
 using UnityEngine;
 using System.Collections;
 
-public class ObstacleGenerator : MonoBehaviour {
+public class ObstacleGenerator : MonoBehaviour
+{
 
-    public float        xSpawnOffset          = 3f;
-    public float        ySpawnOffset          = 3f;
-    public float        spawnFrequence        = 2;
-    public float        spawnFrequenceDivider = 1.1f;
+    public float xSpawnOffset = 3f;
+    public float ySpawnOffset = 3f;
+    public float spawnFrequence = 2;
+    public float spawnFrequenceDivider = 1.1f;
     public GameObject[] obstacles;
-    public int[]        obstaclesScores;
+    public int[] obstaclesScores;
 
 
-    private float  elapsedTime;
-    private float  spawnDuration;
-    private bool   spawnEnable = true;
+    private float elapsedTime;
+    private float spawnDuration;
+    private bool spawnEnable = true;
 
 
-    void Start () {
+    void Start()
+    {
         spawnDuration = spawnFrequence;
         Game.OnStart += OnStart;
     }
 
 
-    void OnStart () {
+    void OnStart()
+    {
         spawnDuration = spawnFrequence;
+        spawnEnable = true;
     }
 
 
-    void Update () {
-        if (!spawnEnable) {
+    void Update()
+    {
+        if (!spawnEnable)
+        {
             return;
         }
 
 
         elapsedTime += Time.deltaTime;
 
-        if (elapsedTime > spawnDuration) {
-            elapsedTime   -= spawnDuration;
+        if (elapsedTime > spawnDuration)
+        {
+            elapsedTime -= spawnDuration;
             spawnDuration /= spawnFrequenceDivider;
 
             Spawn();
@@ -44,13 +51,14 @@ public class ObstacleGenerator : MonoBehaviour {
     }
 
 
-    void Spawn () {
-        float      xOffset    = Random.Range(-xSpawnOffset, xSpawnOffset);
-        float      yOffset    = Random.Range(-ySpawnOffset, ySpawnOffset);
-        Vector3    spawnPoint = transform.position;
+    void Spawn()
+    {
+        float xOffset = Random.Range(-xSpawnOffset, xSpawnOffset);
+        float yOffset = Random.Range(-ySpawnOffset, ySpawnOffset);
+        Vector3 spawnPoint = transform.position;
 
         spawnPoint += transform.right * xOffset;
-        spawnPoint += transform.up    * yOffset;
+        spawnPoint += transform.up * yOffset;
 
         GameObject obstacle = GetRandomObstacle();
 
@@ -58,22 +66,26 @@ public class ObstacleGenerator : MonoBehaviour {
     }
 
 
-    private GameObject GetRandomObstacle () {
-        int   index            = 0;
-        int   totalScore       = 0;
+    private GameObject GetRandomObstacle()
+    {
+        int index = 0;
+        int totalScore = 0;
         int[] incrementedScore = new int[obstaclesScores.Length];
 
 
-        for (int i = 0; i < obstaclesScores.Length; ++i) {
-            totalScore          += obstaclesScores[i];
+        for (int i = 0; i < obstaclesScores.Length; ++i)
+        {
+            totalScore += obstaclesScores[i];
             incrementedScore[i] = totalScore;
         }
 
 
         int randomScore = Random.Range(0, totalScore + 1);
 
-        for (int i = 0; i < incrementedScore.Length; ++i) {
-            if (randomScore < incrementedScore[i]) {
+        for (int i = 0; i < incrementedScore.Length; ++i)
+        {
+            if (randomScore < incrementedScore[i])
+            {
                 index = i;
                 break;
             }
@@ -83,14 +95,20 @@ public class ObstacleGenerator : MonoBehaviour {
     }
 
 
-    void OnTriggerEnter (Collider other) {
-        if (other.tag == "ObstacleEnabler") {
-            spawnEnable = true;
-            Debug.Log("true");
-        }
-        else if (other.tag == "ObstacleDisabler") {
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "ObstacleEnabler")
+        {
             spawnEnable = false;
-            Debug.Log("false");
         }
     }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "ObstacleEnabler")
+        {
+            spawnEnable = true;
+        }
+    }
+
 }
