@@ -21,7 +21,6 @@ public class NewWorldGen : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(spawnObject.Count);
         while (spawnObject.Count < 4)
         {
             GameObject obj = Instantiate(GetRandomObject(), nextObjectPos, Quaternion.LookRotation(nextObjectPos - oldObjectPos)) as GameObject;
@@ -59,7 +58,6 @@ public class NewWorldGen : MonoBehaviour {
         Vector3 forward = (nextObjectPos - oldObjectPos).normalized;
         Quaternion spe = Quaternion.Euler(0, Random.value * angleRot - angleRot * 0.5f, 0);
         Vector3 newForward = spe * forward;
-        Debug.Log(spe);
         oldObjectPos = nextObjectPos;
         nextObjectPos = nextObjectPos + newForward * distanceBetweenObstacle;
     }
