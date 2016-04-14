@@ -6,18 +6,31 @@ public class Game : MonoBehaviour {
     /*===================================
     =            Static Part            =
     ===================================*/
+    public enum States {
+        game,
+        menu
+    }
 
     public delegate void  ResetMethod ();
-    static public   event ResetMethod OnReset;
-
-
+    static public   event ResetMethod OnOver;
+    static public   event ResetMethod OnStart;
 
     static public  Transform corner1;
     static public  Transform corner2;
     static private Game      instance;
+    static public  States    state     = States.menu;
+
+
 
     static public void Over () {
-        OnReset();
+        state = States.menu;
+        OnOver();
+    }
+
+
+    static public void Launch () {
+        state = States.game;
+        OnStart();
     }
 
 
@@ -40,6 +53,8 @@ public class Game : MonoBehaviour {
     public Transform instanceCorner2;
 
     void Awake () {
+        instance = this;
+
         if (!instanceCorner1 || !instanceCorner2) {
             Debug.LogError("[Game Week] GameDimension.Start -> Missing corner");
             Destroy(this);
@@ -53,8 +68,7 @@ public class Game : MonoBehaviour {
 
 
     void Start () {
-        OnReset();
-        instance = this;
+        OnOver();
     }
 
 

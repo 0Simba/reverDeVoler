@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 3cc98990478838c48bbd1e6377a8fc47
+timeCreated: 1460550288
+=======
 guid: d1c36704b55d60147a1f5ea6a35ee6c7
 timeCreated: 1460553197
+>>>>>>> origin/graphic
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -17,13 +22,21 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
+<<<<<<< HEAD
+    heightScale: .25
+=======
     heightScale: 0.25
+>>>>>>> origin/graphic
     normalMapFilter: 0
   isReadable: 0
   grayScaleToAlpha: 0
   generateCubemap: 0
   cubemapConvolution: 0
+<<<<<<< HEAD
+  cubemapConvolutionSteps: 8
+=======
   cubemapConvolutionSteps: 7
+>>>>>>> origin/graphic
   cubemapConvolutionExponent: 1.5
   seamlessCubemap: 0
   textureFormat: -1
@@ -42,7 +55,11 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
+<<<<<<< HEAD
+  spritePivot: {x: .5, y: .5}
+=======
   spritePivot: {x: 0.5, y: 0.5}
+>>>>>>> origin/graphic
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spritePixelsToUnits: 100
   alphaIsTransparency: 0
@@ -50,7 +67,10 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites: []
+<<<<<<< HEAD
+=======
     outline: []
+>>>>>>> origin/graphic
   spritePackingTag: 
   userData: 
   assetBundleName: 
