@@ -87,6 +87,7 @@
      <Compile Include="Assets\Scripts\Player\FakeChild.cs" />
      <Compile Include="Assets\Scripts\Player\Game.cs" />
      <Compile Include="Assets\Scripts\Player\GameFlow.cs" />
+     <Compile Include="Assets\Scripts\Player\KeepAspectRatio.cs" />
      <Compile Include="Assets\Scripts\Player\PickablesGenerator.cs" />
      <Compile Include="Assets\Scripts\Player\Player.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerCollider.cs" />
@@ -95,7 +96,9 @@
      <Compile Include="Assets\Scripts\RealWorldCamera.cs" />
      <Compile Include="Assets\Scripts\Rotator.cs" />
      <Compile Include="Assets\Scripts\Sounds.cs" />
+     <Compile Include="Assets\Scripts\Target\Clement.cs" />
      <Compile Include="Assets\Scripts\Target\ObstacleGenerator.cs" />
+     <Compile Include="Assets\Scripts\Target\PropsGenerator.cs" />
      <Compile Include="Assets\Scripts\Target\TargetMovement.cs" />
      <Compile Include="Assets\Scripts\World\NewWorldGen.cs" />
      <Compile Include="Assets\Scripts\World\SandDune.cs" />
