@@ -20,14 +20,17 @@ public class TargetMovement : MonoBehaviour {
     void Start () {
         Game.OnStart += OnStart;
         Game.OnOver  += Reset;
-        startPoint   = Player.instance.head;
+        minMaxGap    = playerDistanceMaximum - playerDistanceMinimum;
+    }
 
-        minMaxGap  = playerDistanceMaximum - playerDistanceMinimum;
+
+    void OnEnable () {
+        OnStart();
     }
 
 
     void OnStart () {
-        transform.position = startPoint.position + startOffset;
+        transform.position = Player.instance.startPoint.position + startOffset;
     }
 
 	

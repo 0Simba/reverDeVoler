@@ -21,7 +21,7 @@ public class NewWorldGen : MonoBehaviour {
             spawnObject.Remove(spawn);
         }
         nextObjectPos = Vector3.forward * distanceBetweenObstacle;
-        oldObjectPos = Vector3.zero;
+        oldObjectPos  = Vector3.zero;
         
     }
     
@@ -71,10 +71,11 @@ public class NewWorldGen : MonoBehaviour {
     
     void CalculateNextPos()
     {
-        Vector3 forward = (nextObjectPos - oldObjectPos).normalized;
-        Quaternion spe = Quaternion.Euler(0, Random.value * angleRot - angleRot * 0.5f, 0);
-        Vector3 newForward = spe * forward;
-        oldObjectPos = nextObjectPos;
+        Vector3    forward    = (nextObjectPos - oldObjectPos).normalized;
+        Quaternion spe        = Quaternion.Euler(0, Random.value * angleRot - angleRot * 0.5f, 0);
+        Vector3    newForward = spe * forward;
+
+        oldObjectPos  = nextObjectPos;
         nextObjectPos = nextObjectPos + newForward * distanceBetweenObstacle;
     }
 
