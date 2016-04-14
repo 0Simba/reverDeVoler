@@ -1,6 +1,11 @@
 fileFormatVersion: 2
-guid: 8532449f064a7304a9f959a2365c1ee5
-timeCreated: 1460644186
+<<<<<<< HEAD:reverDeVoler/Assets/props2/Skybox/Skybox_02.mat.meta
+guid: 49dd86df176e4d4459e9c04854b5ac04
+timeCreated: 1460463125
+=======
+guid: 43c844c786edf964a81c8567f9fc4f9d
+timeCreated: 1460644258
+>>>>>>> origin/graphic:reverDeVoler/Assets/props2/Particles/firefly.prefab.meta
 licenseType: Free
 NativeFormatImporter:
   userData: 
