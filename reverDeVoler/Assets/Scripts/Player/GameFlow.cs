@@ -42,15 +42,20 @@ public class GameFlow : MonoBehaviour {
     void CheckLiftHeadRatio () {
         Vector3 forward = Player.instance.head.forward;
 
+        if (forward.y>0.7) {
+            Game.Launch();
+        }
+        /*
         forward.x = 0;
         forward.Normalize();
-
+        //WHAT THE FUCK MEN ?
         float angle = Mathf.Atan2(forward.y, forward.z);
         float ratio = Mathf.Min(1, Mathf.Max(0, angle * Mathf.Rad2Deg / 40));
 
         if (ratio == 1) {
-            Game.Launch();
-        }        
+           Game.Launch();
+        }   
+        */     
     }
 
 
