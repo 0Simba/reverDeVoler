@@ -18,8 +18,6 @@ public class CeilKiller : MonoBehaviour {
         }
 
         float floorLevel = floor.GetFloorLevel(playerPosition);
-        Debug.Log(floorLevel);
-        Debug.Log(transform.position.y);
         if (playerPosition.y < floorLevel) {
             Game.Over();
         }

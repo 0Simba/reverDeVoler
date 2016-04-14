@@ -18,6 +18,7 @@ public class TargetMovement : MonoBehaviour {
 
     void Start () {
         Game.OnStart += OnStart;
+        Game.OnOver += Reset;
         startPoint = Player.instance.head;
 
         minMaxGap  = playerDistanceMaximum - playerDistanceMinimum;
@@ -65,5 +66,10 @@ public class TargetMovement : MonoBehaviour {
         if (waypoints.Count == 0) {
             waypoints.Add(Random.insideUnitSphere * 50 + Vector3.forward * 25 + Vector3.up * 30);
         }        
+    }
+
+    void Reset()
+    {
+        waypoints.Clear();
     }
 }
