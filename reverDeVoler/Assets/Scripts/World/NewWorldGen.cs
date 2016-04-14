@@ -11,6 +11,7 @@ public class NewWorldGen : MonoBehaviour {
     private Vector3 nextObjectPos = Vector3.forward;
     private Vector3 oldObjectPos = Vector3.zero;
     public float angleRot = 90;
+    public float finalObjectWaypointCount = 0;
     
 	// Use this for initialization
 	void Start () {
@@ -20,21 +21,36 @@ public class NewWorldGen : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (spawnObject.Count < 10)
+        Debug.Log(spawnObject.Count);
+        while (spawnObject.Count < 4)
         {
             GameObject obj = Instantiate(GetRandomObject(), nextObjectPos, Quaternion.LookRotation(nextObjectPos - oldObjectPos)) as GameObject;
             CalculateNextPos();
             UpdateTargetPath(obj);
             spawnObject.Add(obj);
         }
+        destroyOldObject();
     }
 
     void UpdateTargetPath(GameObject obj)
     {
+        finalObjectWaypointCount = 0;
         List<Transform> targets = GetChildWithTag(obj.transform, "Target");
         foreach(Transform point in targets)
         {
+            finalObjectWaypointCount++;
             target.waypoints.Add(point.position);
+            Destroy(point.gameObject);
+        }
+    }
+
+    void destroyOldObject()
+    {
+        if (target.waypoints.Count < finalObjectWaypointCount + 2)
+        {
+            GameObject first = spawnObject[0];
+            Destroy(first);
+            spawnObject.RemoveAt(0);
         }
     }
     
@@ -43,6 +59,7 @@ public class NewWorldGen : MonoBehaviour {
         Vector3 forward = (nextObjectPos - oldObjectPos).normalized;
         Quaternion spe = Quaternion.Euler(0, Random.value * angleRot - angleRot * 0.5f, 0);
         Vector3 newForward = spe * forward;
+        Debug.Log(spe);
         oldObjectPos = nextObjectPos;
         nextObjectPos = nextObjectPos + newForward * distanceBetweenObstacle;
     }
