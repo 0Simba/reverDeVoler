@@ -6,18 +6,21 @@ public class TargetMovement : MonoBehaviour {
 
     public  List<Vector3> waypoints;
     public  Vector3       startOffset;
-    public  float         speed        = 1;
+    public  float         MaxSpeed     = 1;
     public  float         requiredDist = 1;
     public  float         playerDistanceMinimum;
     public  float         playerDistanceMaximum;
+
     private Transform     startPoint;
     private Transform     player;
-
+    private float         minMaxGap;
 
 
     void Start () {
         Game.OnStart += OnStart;
         startPoint = Player.instance.head;
+
+        minMaxGap  = playerDistanceMaximum - playerDistanceMinimum;
     }
 
 
@@ -44,7 +47,15 @@ public class TargetMovement : MonoBehaviour {
 
 
     void MoveFromDirection (Vector3 direction) {
-        transform.position += direction * Time.deltaTime * speed;
+        Vector3 playerPosition = Player.instance.transform.position; 
+        float   playerDistance = (transform.position - playerPosition).magnitude;
+        float   ratio          = 1 - (playerDistance - playerDistanceMinimum) / minMaxGap;
+
+        ratio = Mathf.Min(1, Mathf.Max(0, ratio));
+
+        Debug.Log(ratio);
+
+        transform.position += direction * Time.deltaTime * MaxSpeed * ratio;
     }
 
 
