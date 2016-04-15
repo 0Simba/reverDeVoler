@@ -6,6 +6,9 @@ public class SandDune : MonoBehaviour {
     public Transform player;
     private Mesh mesh;
 
+    public  float timeBeetwenGeneration = 3f;
+    private float elapsedTime = 0;
+
     // Use this for initialization
     void Start() {
         mesh = GetComponent<MeshFilter>().mesh;
@@ -29,7 +32,12 @@ public class SandDune : MonoBehaviour {
 	
 
 	void Update () {
-        GenerateMesh();
+        if (elapsedTime >= timeBeetwenGeneration) {
+            GenerateMesh();
+            elapsedTime = 0;
+        }
+
+        elapsedTime += Time.deltaTime;
     }
 
 
