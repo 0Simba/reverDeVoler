@@ -22,4 +22,13 @@ public class FlyingObstacle : Entity {
 
         transform.Rotate(xRotation, yRotation, zRotation);
     }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "ObstacleEnabler")
+        {
+            GetComponent<Entity>().InstantOwnDestroy();
+        }
+    }
 }

@@ -52,6 +52,19 @@ public class Entity : MonoBehaviour {
     }
 
 
+    public void InstantOwnDestroy()
+    {
+        if (isDestroying)
+        {
+            return;
+        }
+
+        isDestroying = true;
+        Destroy(gameObject);
+    }
+
+
+
     IEnumerator Shrink () {
         Game.OnOver -= OwnDestroy;
 
