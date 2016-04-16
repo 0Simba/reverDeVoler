@@ -12,13 +12,17 @@ public class HUDHider : MonoBehaviour {
 
     void OnStart()
     {
-        GetComponent<Renderer>().material.color = new Color(1, 1, 1, 0);
+        Renderer renderer = GetComponent<Renderer>();
+        renderer.material.color = new Color(1, 1, 1, 0);
+        renderer.enabled = false;
     }
 
 
     void OnOver()
     {
-        GetComponent<Renderer>().material.color = new Color(1, 1, 1, 1);
+        Renderer renderer = GetComponent<Renderer>();
+        renderer.material.color = new Color(1, 1, 1, 1);
+        renderer.enabled = true;
     }
 }
 

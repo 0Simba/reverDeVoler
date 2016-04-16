@@ -8,13 +8,19 @@ public class Fade : MonoBehaviour {
     public  bool  show        = false;
 
     private float ratio       = 1;
-    private bool  ratioForced = false; 
+    private bool  ratioForced = false;
+    private Renderer _renderer;
 
 
 
     void Start () {
         ratio = (show) ? 1 : 0;
-        GetComponent<Renderer>().material.color = new Color (1, 1, 1, ratio);
+        _renderer = GetComponent<Renderer>();
+        if ((ratio > 0.01) != _renderer.enabled)
+        {
+            _renderer.enabled = ratio > 0.01;
+        }
+        _renderer.material.color = new Color (1, 1, 1, ratio);
     }
 
 
@@ -27,8 +33,11 @@ public class Fade : MonoBehaviour {
         }
 
         ratioForced = false;
-
-        GetComponent<Renderer>().material.color = new Color (1, 1, 1, ratio);
+        if ((ratio > 0.01) != _renderer.enabled)
+        {
+            _renderer.enabled = ratio > 0.01;
+        }
+        _renderer.material.color = new Color (1, 1, 1, ratio);
     }
 
 
